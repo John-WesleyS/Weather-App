@@ -1,16 +1,140 @@
-# React + Vite
+# 🌤️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather application built using **React.js, Tailwind CSS, and the OpenWeather API**.
 
-Currently, two official plugins are available:
+The application allows users to search for weather information by city or use their current location to get real-time weather conditions, hourly forecasts, and a 5-day forecast.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔍 City Weather Search
 
-## Expanding the ESLint configuration
+- Search weather information by city name.
+- Automatically formats the entered city name.
+- Converts input into a clean format before sending the API request.
+- Handles empty search input.
+- Displays an error message when the city cannot be found.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📍 Current Location Weather
+
+- Uses the browser's Geolocation API.
+- Retrieves the user's latitude and longitude.
+- Fetches weather information based on the user's current location.
+- Handles location permission and location-related errors.
+
+### 🌡️ Current Weather
+
+Displays:
+
+- City name
+- Country
+- Current temperature
+- Feels-like temperature
+- Weather condition
+- Weather icon
+- Humidity
+- Wind speed
+- Atmospheric pressure
+- Visibility
+
+### 🕐 Hourly Forecast
+
+- Displays upcoming hourly weather conditions.
+- Shows:
+  - Time
+  - Weather icon
+  - Temperature
+  - Weather description
+- Uses horizontal scrolling for smaller screens.
+- Provides a responsive card-based layout.
+
+### 📅 5-Day Forecast
+
+Displays:
+
+- Day
+- Weather icon
+- Weather condition
+- Maximum temperature
+- Minimum temperature
+
+The forecast is displayed as a clean vertical list.
+
+### 🔄 Loading State
+
+While weather information is being retrieved:
+
+- Displays a loading spinner.
+- Shows a user-friendly loading message.
+- Prevents outdated weather information from being displayed during a new request.
+
+### ❌ Error Handling
+
+The application handles:
+
+- Empty city input
+- Invalid city names
+- Failed weather API requests
+- Failed forecast requests
+- Current location errors
+- Invalid or unavailable location data
+
+User-friendly error messages are displayed instead of exposing raw API errors.
+
+### 📱 Responsive Design
+
+The application is designed for:
+
+- Mobile phones
+- Tablets
+- Laptops
+- Desktop screens
+
+Tailwind CSS responsive utilities are used to adapt:
+
+- Weather cards
+- Forecast layouts
+- Search interface
+- Statistics grid
+- Spacing
+- Typography
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| React.js | Frontend UI |
+| JavaScript | Application logic |
+| Tailwind CSS | Styling and responsive design |
+| OpenWeather API | Weather and forecast data |
+| Lucide React | UI icons |
+| Vite | Development server and build tool |
+| Browser Geolocation API | Current location detection |
+| Git & GitHub | Version control |
+
+---
+
+# 🏗️ Project Architecture
+
+```text
+Weather App
+│
+├── React Application
+│
+├── Components
+│   ├── SearchBar
+│   ├── LocationButton
+│   ├── CurrentWeather
+│   ├── HourlyForecast
+│   └── DailyForecast
+│
+├── Services
+│   ├── weatherApi
+│   └── weatherTimestamp
+│
+└── OpenWeather API
+    ├── Current Weather
+    └── 5-Day / 3-Hour Forecast
