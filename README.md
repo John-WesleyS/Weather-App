@@ -165,3 +165,18 @@ weather-app/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
+📁 File Responsibilities
+App.jsx
+
+Acts as the main controller of the application.
+
+Responsible for:
+
+Managing weather state
+Managing loading state
+Managing error state
+Handling city searches
+Handling location-based searches
+Fetching current weather
+Fetching forecast data
+Passing data to child components
