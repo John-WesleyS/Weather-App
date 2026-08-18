@@ -138,3 +138,30 @@ Weather App
 └── OpenWeather API
     ├── Current Weather
     └── 5-Day / 3-Hour Forecast
+weather-app/
+│
+├── public/
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── SearchBar.jsx
+│   │   ├── LocationButton.jsx
+│   │   ├── CurrentWeather.jsx
+│   │   ├── HourlyForecast.jsx
+│   │   └── DailyForecast.jsx
+│   │
+│   ├── services/
+│   │   ├── weatherApi.js
+│   │   └── weatherTimestamp.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
